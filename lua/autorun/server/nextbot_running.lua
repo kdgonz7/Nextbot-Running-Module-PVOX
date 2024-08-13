@@ -17,9 +17,10 @@ hook.Add("Tick", "CheckAndEmitRunIfScared", function ()
         --- @param ent NextBot
         for _, ent in pairs(ents.FindInSphere(ply:GetPos(), 650)) do
             if ! Scary(ent) then continue end
+
             if ! ply:Visible(ent) then continue end
             if ! ent:Visible(ply) then continue end
-
+        
             --- @type PVOX_ModuleBaseClass
             local pmod = PVox:GetPlayerModule(ply)
             
