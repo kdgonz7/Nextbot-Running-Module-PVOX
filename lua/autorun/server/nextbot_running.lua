@@ -15,7 +15,7 @@ hook.Add("Tick", "CheckAndEmitRunIfScared", function ()
         if ! ply:Alive() then continue end
 
         --- @param ent NextBot
-        for _, ent in pairs(ents.FindInSphere(ply:GetPos(), 650)) do
+        for _, ent in pairs(ents.FindInSphere(ply:GetPos(), RegularRadius:GetInt())) do
             if ! Scary(ent) then continue end
 
             if ! ply:Visible(ent) then continue end
